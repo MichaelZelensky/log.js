@@ -1,0 +1,11 @@
+/*!
+ * log.js
+ *
+ * Author: Michael Zelensky http://miha.in
+ *
+ * Summary: cross-browser wrapper for Console methods
+ * License: MIT
+ * Version: 1.0
+ *
+ */
+;var log={};if(typeof console==="undefined"){window.console={log:function(){},debug:function(){},info:function(){},warn:function(){},error:function(){}}}log.xlog=function(){},log.xdebug=function(){},log.xinfo=function(){},log.xwarn=function(){},log.xerror=function(){};if(console){if(console.log.apply){log.xlog=function(){console.log.apply(console,arguments)};log.xdebug=function(){console.debug.apply(console,arguments)};log.xinfo=function(){console.info.apply(console,arguments)};log.xwarn=function(){console.warn.apply(console,arguments)};log.xerror=function(){console.error.apply(console,arguments)}}else{log.xlog=Function.prototype.bind.call(console.log,console);log.xdebug=function(){console.log("Error: console.debug is not supported by the browser")};log.xinfo=Function.prototype.bind.call(console.info,console);log.xwarn=Function.prototype.bind.call(console.warn,console);log.xerror=Function.prototype.bind.call(console.error,console)}if(typeof(window.console.time)=="undefined"){console.time=function(a,c){if(!a){return}var d=new Date().getTime();if(!console.timeCounters){console.timeCounters={}}var b="KEY"+a.toString();if(!c&&console.timeCounters[b]){return}console.timeCounters[b]=d};console.timeEnd=function(b){var f=new Date().getTime();if(!console.timeCounters){return}var c="KEY"+b.toString();var d=console.timeCounters[c];var e;if(d){e=f-d;var a=b+": "+e+"ms";console.info(a);delete console.timeCounters[c]}return e}}}log.log=function(){log.xlog.apply(console,arguments)};log.debug=function(){log.xdebug.apply(console,arguments)};log.info=function(){log.xinfo.apply(console,arguments)};log.warn=function(){log.xwarn.apply(console,arguments)};log.error=function(){log.xerror.apply(console,arguments)};log.time=function(a){if(console&&console.time){console.time(a)}};log.timeEnd=function(a){if(console&&console.timeEnd){console.timeEnd(a)}};log.group=function(a){if(console&&console.group){console.group(a)}};log.groupEnd=function(a){if(console&&console.groupEnd){console.groupEnd(a)}};
