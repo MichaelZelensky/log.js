@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <title>log.js</title>
+    <script src="js/jquery-1.11.0.min.js" type="application/javascript"></script>
+    <script src="js/log.js" type="application/javascript"></script>
+    <script src="js/sample_app.js" type="application/javascript"></script>
+</head>
+<body>
+<h1>log.js</h1>
+<p>Cross-browser wrapper for <code>window.console</code> object.</p>
+<p>If you try to use console.log() in Internet Explorer version 9 or less,
+    it will throw out an error and make you script stop.
+    The script fixes this problem and makes console.log() usage cross-browser.
+    It will not log messages in IE9 or less, because there is no technical way for that,
+    but your JS will also not crash because of using console object.</p>
+<p>Open your browser Developer tool console to see how it is working right now while you are reading this.
+    If your browser is IE&lt;9, then it will now show anything - this is the best prove the the script is working well!</p>
+<h2>Usage</h2>
+<ol>
+    <li>Include log.js by adding this line to your html HEAD section:<br>
+    <code>&lt;script src="js/log.js" type="application/javascript"&gt;&lt;/script&gt;</code>
+    </li>
+    <li>
+        In your JS code:<br>
+        <code>log.log('This is console log message')</code><br>
+        <code>log.error('This is console error message')</code><br>
+        etc.
+    </li>
+    <li>
+        Open your browser Developer Tools console and see the output!
+    </li>
+</ol>
+<p>(c) Michael Zelensky<br>
+    <a href="http://miha.in">www.miha.in</a></p>
+</body>
+</html>

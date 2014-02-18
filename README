@@ -1,0 +1,17 @@
+log.js
+
+Cross-browser wrapper for window.console object.
+
+If you try to use console.log() in Internet Explorer version 9 or less, it will throw out an error and make you script stop. The script fixes this problem and makes console.log() usage cross-browser. It will not log messages in IE9 or less, because there is no technical way for that, but your JS will also not crash because of using console object.
+
+Usage
+
+Include JSLog by adding this line to your html HEAD section:
+<script src="js/log.js" type="application/javascript"></script>
+In your JS code:
+JSLog.log('This is console log message')
+JSLog.error('This is console error message')
+etc.
+Open your browser Developer Tools console and see the output!
+(c) Michael Zelensky
+www.miha.in
